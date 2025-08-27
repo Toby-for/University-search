@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Scholarship Finder</title>
+    <link rel="icon" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <h1>Global Scholarship Finder</h1>
+      <p class="subtitle">Find affordable international universities</p>
+      <nav><a href="#" id="about-link">About/Methodology</a></nav>
+    </header>
+
+    <main class="layout">
+      <aside class="filters" id="filters-panel">
+        <h2 class="visually-hidden">Filters</h2>
+        <form id="filters-form">
+          <section>
+            <h3>Country</h3>
+            <label
+              ><input type="checkbox" name="country" value="USA" /> USA</label
+            >
+            <label
+              ><input type="checkbox" name="country" value="UK" /> UK</label
+            >
+            <label
+              ><input type="checkbox" name="country" value="China" />
+              China</label
+            >
+            <label
+              ><input type="checkbox" name="country" value="South Korea" />
+              South Korea</label
+            >
+            <label
+              ><input type="checkbox" name="country" value="Hong Kong" /> Hong
+              Kong</label
+            >
+            <label
+              ><input type="checkbox" name="country" value="Japan" />
+              Japan</label
+            >
+          </section>
+          <section>
+            <h3>Scholarship Type</h3>
+            <label
+              ><input
+                type="checkbox"
+                name="scholarshipType"
+                value="Full-ride"
+              />
+              Full-ride</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="scholarshipType"
+                value="Full-tuition"
+              />
+              Full-tuition</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="scholarshipType"
+                value="Low-tuition"
+              />
+              Low-tuition</label
+            >
+          </section>
+          <section>
+            <h3>Instruction Language</h3>
+            <label for="instructionLanguage" class="visually-hidden"
+              >Instruction Language</label
+            >
+            <select id="instructionLanguage" name="instructionLanguage">
+              <option value="">All</option>
+              <option>English</option>
+              <option>Bilingual</option>
+              <option>Local</option>
+            </select>
+          </section>
+          <section>
+            <h3>Program Strength</h3>
+            <label
+              ><input
+                type="checkbox"
+                name="programStrength"
+                value="Neuroscience"
+              />
+              Neuroscience</label
+            >
+            <label
+              ><input type="checkbox" name="programStrength" value="STEM" />
+              STEM</label
+            >
+            <label
+              ><input type="checkbox" name="programStrength" value="General" />
+              General</label
+            >
+          </section>
+          <section>
+            <h3>Budget Band</h3>
+            <label><input type="radio" name="budgetBand" value="$" /> $</label>
+            <label
+              ><input type="radio" name="budgetBand" value="$$" /> $$</label
+            >
+            <label
+              ><input type="radio" name="budgetBand" value="$$$" /> $$$</label
+            >
+          </section>
+          <section>
+            <h3>Intake</h3>
+            <label
+              ><input type="checkbox" name="intake" value="Fall" /> Fall</label
+            >
+            <label
+              ><input type="checkbox" name="intake" value="Spring" />
+              Spring</label
+            >
+          </section>
+          <button type="button" id="clear-filters">Clear all</button>
+        </form>
+      </aside>
+
+      <section class="results">
+        <label for="search" class="visually-hidden">Search</label>
+        <input type="search" id="search" placeholder="Search universities" />
+        <p id="results-summary">Showing 0 of 0 universities</p>
+
+        <table id="results-table" class="results-table">
+          <thead>
+            <tr>
+              <th>University</th>
+              <th>Location</th>
+              <th>Language</th>
+              <th>Program</th>
+              <th>Tuition</th>
+              <th>CoL (USD)</th>
+              <th>Scholarship</th>
+              <th>Coverage</th>
+              <th>Eligibility</th>
+              <th>Deadline</th>
+              <th>Work</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="results-cards" class="results-cards"></div>
+        <p id="empty-state" class="hidden">
+          No universities match your criteria.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Data verified on: <span id="latest-verified">—</span> • Sources:
+      University pages. Feedback: <a href="#">Google Form</a> © 2025
+    </footer>
+
+    <!-- Google Analytics placeholder
+  <script>
+    // window.ga=...;
+  </script>
+  -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

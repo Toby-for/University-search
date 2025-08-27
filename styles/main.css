@@ -1,0 +1,143 @@
+:root {
+  --bg: #fff;
+  --text: #222;
+  --accent: #005fcc;
+  --muted: #666;
+  --warning: #b00020;
+  --border: #ddd;
+  --spacing: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.top-bar {
+  background: var(--accent);
+  color: #fff;
+  padding: var(--spacing);
+  text-align: center;
+}
+
+.top-bar a {
+  color: #fff;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  background: #f7f7f7;
+  padding: var(--spacing);
+}
+
+.filters h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.filters label {
+  display: block;
+}
+
+.results {
+  padding: var(--spacing);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: none;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+  text-align: left;
+}
+
+.results-table thead {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+}
+
+.results-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing);
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: var(--spacing);
+  background: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.3rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.875rem;
+  padding: var(--spacing);
+  color: var(--muted);
+}
+
+.past-deadline {
+  color: var(--warning);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    flex-direction: row;
+  }
+  .filters {
+    width: 250px;
+    flex-shrink: 0;
+    height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+  .results {
+    flex: 1;
+    overflow-x: auto;
+  }
+  .results-table {
+    display: table;
+  }
+  .results-cards {
+    display: none;
+  }
+}
